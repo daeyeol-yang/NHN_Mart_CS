@@ -57,3 +57,7 @@ NHN Mart는 소프트웨어를 통해 성공적인 매출을 기록하고 있습
 - **GET /cs/logout**: CS담당자 로그아웃 처리
 - **GET /cs/admin/answer**: 고객문의 답변하기 폼
 - **GET /cs/admin/answer**: 고객문의 답변하기 처
+
+
+### **관계 모델**
+![관계 모델](Relational_Model.png)
