@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>게시물 등록</title>
+</head>
+<body>
+<form method="post" th:action="@{/post/register}" th:object="${postRegisterRequest}">
+  제목: <input type="text" th:name = "title" /><br />
+  카테고리: <input type="text" th:name="category" /><br />
+  내용: <textarea th:name="content" rows="10" cols="80"></textarea><br />
+  날짜: <input type="text" th:name="date" /><br />
+  파일: <input type="file" th:name="file" /><br />
+
+  <input type="submit" />
+</form>
+</body>
+</html>

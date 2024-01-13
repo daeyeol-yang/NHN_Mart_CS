@@ -40,7 +40,7 @@ public class LoginController {
                 model.addAttribute("id", session);
                 model.addAttribute("role", role);
 
-                return "adminMain";
+                return "admin/adminMain";
             }
             else{
                 return "customerMain";
@@ -69,7 +69,7 @@ public class LoginController {
 
             modelMap.put("id", session.getId());
             modelMap.put("ROLE", "ADMIN");
-            return "adminMain";
+            return "admin/adminMain";
         } else if (customerRepository.matches(id,pwd)) {
             HttpSession session = request.getSession(true);
             Cookie cookie = new Cookie("SESSION", session.getId());
