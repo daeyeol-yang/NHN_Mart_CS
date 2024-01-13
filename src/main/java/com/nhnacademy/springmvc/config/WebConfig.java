@@ -41,7 +41,7 @@ public class WebConfig implements ApplicationContextAware, MessageSourceAware {
         viewResolver.setTemplateEngine(templateEngine());
         viewResolver.setCharacterEncoding("UTF-8");
         viewResolver.setOrder(1);
-        viewResolver.setViewNames(new String[] {"/*"});
+        viewResolver.setViewNames(new String[] {"*"});
 
         return viewResolver;
     }
@@ -58,7 +58,7 @@ public class WebConfig implements ApplicationContextAware, MessageSourceAware {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(applicationContext);
         templateResolver.setCharacterEncoding("UTF-8");
-        templateResolver.setPrefix("/WEB-INF/view");
+        templateResolver.setPrefix("/WEB-INF/view/");
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode("HTML5");
 

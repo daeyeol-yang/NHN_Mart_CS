@@ -13,12 +13,16 @@ public abstract class User {
 
     @Getter
     @Setter
+    private int age;
+
+    @Getter
+    @Setter
     private String name;
 
-    public User(String id, String password, String name) {
+    protected User(String id, String password, int age , String name) {
         this.id = id;
         this.password = password;
-        this.name = name;
+        this.age=age;
+        this.name=name;
     }
-
 }

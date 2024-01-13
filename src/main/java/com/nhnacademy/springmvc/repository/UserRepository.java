@@ -10,5 +10,7 @@ public interface UserRepository  {
     boolean exists(String id);
     boolean matches(String id, String password);
 
+   User register(String id, String password,int age, String name );
+
     User getUser(String id);
 }

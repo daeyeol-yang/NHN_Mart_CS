@@ -22,6 +22,18 @@ public class CustomerRepositoryImpl implements CustomerRepository {
                 .orElse(false);
     }
 
+    @Override
+    public User register(String id, String password,int age, String name ){
+        Customer customer = Customer.create(id,password,age,name);
+        customer.setAge(age);
+        customer.setName(name);
+        customerMap.put(id,customer);
+
+        return customer;
+    }
+
+
+
 
     @Override
     public User getUser(String id) {

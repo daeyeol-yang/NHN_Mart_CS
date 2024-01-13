@@ -1,7 +1,6 @@
 package com.nhnacademy.springmvc.repository;
 
 import com.nhnacademy.springmvc.domain.Admin;
-import com.nhnacademy.springmvc.domain.Customer;
 import com.nhnacademy.springmvc.domain.User;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,6 +19,16 @@ public class AdminRepositoryImpl implements AdminRepository {
         return Optional.ofNullable(getUser(id))
                 .map(Admin ->Admin.getPassword().equals(password))
                 .orElse(false);
+    }
+
+    @Override
+    public User register(String id, String password,int age, String name ){
+        Admin admin = Admin.create(id,password,age,name);
+        admin.setAge(age);
+        admin.setName(name);
+        adminMap.put(id,admin);
+
+        return admin;
     }
 
     @Override
