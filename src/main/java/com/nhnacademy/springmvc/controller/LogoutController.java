@@ -18,7 +18,7 @@ public class LogoutController {
             session.invalidate();
             Cookie cookie = new Cookie("SESSION", null);
             Cookie cookie1 = new Cookie("ROLE", null);
-            response.addCookie(cookie);
+                              response.addCookie(cookie);
             response.addCookie(cookie1);
         }
         return "redirect:/login";

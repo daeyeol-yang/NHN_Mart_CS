@@ -4,7 +4,6 @@ import com.nhnacademy.springmvc.domain.Admin;
 import com.nhnacademy.springmvc.domain.Customer;
 import java.util.Date;
 import lombok.Setter;
-import lombok.Value;
 
 
 public class Post {

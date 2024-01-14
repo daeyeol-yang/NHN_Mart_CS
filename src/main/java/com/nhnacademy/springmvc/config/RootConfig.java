@@ -1,11 +1,15 @@
 package com.nhnacademy.springmvc.config;
 
 
+import com.nhnacademy.springmvc.domain.post.PostCategory;
 import com.nhnacademy.springmvc.repository.AdminRepository;
 import com.nhnacademy.springmvc.repository.AdminRepositoryImpl;
 import com.nhnacademy.springmvc.repository.Base;
 import com.nhnacademy.springmvc.repository.CustomerRepository;
 import com.nhnacademy.springmvc.repository.CustomerRepositoryImpl;
+import com.nhnacademy.springmvc.repository.post.PostRepository;
+import com.nhnacademy.springmvc.repository.post.PostRepositoryImpl;
+import java.util.Date;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -31,5 +35,13 @@ public class RootConfig {
         AdminRepository adminRepository = new AdminRepositoryImpl();
         adminRepository.register("admin","12345",27,"양대열");
         return adminRepository;
+    }
+
+    @Bean
+    public PostRepository postRepository(){
+        PostRepository postRepository = new PostRepositoryImpl();
+        Date currentDate = new Date();
+        postRepository.register("문제 1", PostCategory.COMPLAINT,"배달지연", currentDate,"file");
+        return postRepository;
     }
 }
